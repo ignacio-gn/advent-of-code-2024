@@ -8,6 +8,9 @@ class Grid:
         self.rows = len(lines)
         self.cols = len(lines[0])
 
+    def get(self, y, x):
+        return self.grid[y][x] if 0 <= y < self.rows and 0 <= x < self.cols else None
+
     def get_adjacent_from(self, x, y, length):
         return [
             self.get_next_n_from(x, y, length, direction)
@@ -42,6 +45,12 @@ class Grid:
             else:
                 break
         return result
+
+    def __getitem__(self, item):
+        return self.grid[item]
+
+    def __setitem__(self, key, value):
+        self.grid[key] = value
 
 
 def read_file(filename: str) -> list[str]:
