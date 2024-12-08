@@ -1,7 +1,6 @@
 import time
 from copy import copy, deepcopy
 
-from sympy import timed
 
 from util.util import *
 
