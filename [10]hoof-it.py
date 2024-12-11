@@ -1,5 +1,6 @@
 from util.util import *
 
+
 class MapGrid(Grid):
     def __init__(self, grid):
         super().__init__(grid)
@@ -27,6 +28,7 @@ def solve_1(grid):
             out += len(item)
     return out
 
+
 def solve_2(grid):
     hilltops = Grid(
         [[0 if grid[y][x] != 9 else 1 for x in range(grid.cols)] for y in
@@ -51,6 +53,7 @@ def solve_2(grid):
         for item in line:
             out += item
     return out
+
 
 if __name__ == "__main__":
     lines = [list(map(int, list(line))) for line in read_file("input/10.txt")]

@@ -1,5 +1,6 @@
 from util.util import *
 
+
 def calculate_checksum(disk):
     out = 0
     for i in range(len(disk)):
@@ -22,8 +23,10 @@ def solve_1(disk):
                    + disk[idx_free + 1:idx_block] + ["."] + disk[idx_block + 1:]
     return calculate_checksum(disk)
 
+
 def flatten(list):
     return [x for sublist in list for x in sublist]
+
 
 def solve_2(line):
     disk = [[(i // 2) if i % 2 == 0 else 0] * int(line[i]) for i in range(len(line))]
@@ -44,7 +47,6 @@ def solve_2(line):
                 break
 
     return calculate_checksum(flatten(disk))
-
 
 
 if __name__ == "__main__":

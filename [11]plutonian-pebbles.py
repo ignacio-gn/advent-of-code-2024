@@ -1,5 +1,6 @@
 from util.util import *
 
+
 def process_pebble(n):
     n_str = str(n)
     len_n_str = len(n_str)
@@ -10,12 +11,14 @@ def process_pebble(n):
         return [n * 2024]
     return [1]
 
+
 def solve_1(lines):
     N_BLINKS = 25
     for i in range(N_BLINKS):
         lines = [item for n in lines for item in process_pebble(n)]
 
     return len(lines)
+
 
 def solve_2(lines):
     N_BLINKS = 75
@@ -31,6 +34,7 @@ def solve_2(lines):
         pebbles = local_pebbles
 
     return sum(pebbles.values())
+
 
 if __name__ == "__main__":
     lines = list(map(int, read_file("input/11.txt")[0].split(" ")))
